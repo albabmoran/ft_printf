@@ -6,7 +6,7 @@
 /*   By: alba <alba@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 16:09:31 by albben-a          #+#    #+#             */
-/*   Updated: 2026/02/05 13:12:27 by alba             ###   ########.fr       */
+/*   Updated: 2026/02/05 16:28:13 by alba             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ void	ft_putstr(char *s)
 {
 	int	len;
 
-	len = ft_strlen(s);
-	write(1, s, len);
+	if (s)
+	{
+		len = ft_strlen(s);
+		write(1, s, len);
+	}
+	else
+		write(1, "(null)", 6);
 }
