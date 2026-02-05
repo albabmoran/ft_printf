@@ -6,7 +6,7 @@
 /*   By: alba <alba@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:42:17 by albben-a          #+#    #+#             */
-/*   Updated: 2026/02/05 13:12:21 by alba             ###   ########.fr       */
+/*   Updated: 2026/02/05 14:20:44 by alba             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@ void	ft_putnbr_base(int n, char c)
 	long int	new_n;
 
 	new_n = n;
-	base = malloc(17);
-	if (!base)
-		return ;
 	if (c == 'X')
 		base = "0123456789ABCDEF";
 	else

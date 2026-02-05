@@ -6,7 +6,7 @@
 /*   By: alba <alba@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 16:49:51 by albben-a          #+#    #+#             */
-/*   Updated: 2026/02/05 13:12:53 by alba             ###   ########.fr       */
+/*   Updated: 2026/02/05 14:47:23 by alba             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,3 @@ void	ft_putptr(void *ptr)
 	if (n < 16)
 		ft_putnbr_base(n, 'x');
 }
-
-/*int	main(void)
-{
-	char	s[] = "hola";
-
-	ft_putptr(s);
-	printf("\n%p", (void *)s);
-	return (0);
-}*/
