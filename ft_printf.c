@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albben-a <albben-a@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: alba <alba@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 13:47:02 by albben-a          #+#    #+#             */
-/*   Updated: 2026/02/04 16:56:50 by albben-a         ###   ########.fr       */
+/*   Updated: 2026/02/05 13:12:23 by alba             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	detect_format(char c, va_list args)
 	if (c == 'c')
 		ft_putchar(va_args(args, char));
 	else if (c == 's')
-		ft_putstr(va_args(args, char*));
+		ft_putstr(va_args(args, char *));
 	else if (c == 'p')
-		ft_putptr(va_args(args, void*));
+		ft_putptr(va_args(args, void *));
 	else if (c == 'd' || c == 'i')
 		ft_putnbr(va_args(args, int));
 	else if (c == 'u')

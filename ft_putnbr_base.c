@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albben-a <albben-a@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: alba <alba@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:42:17 by albben-a          #+#    #+#             */
-/*   Updated: 2026/02/04 16:18:27 by albben-a         ###   ########.fr       */
+/*   Updated: 2026/02/05 13:12:21 by alba             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ void	ft_putnbr_base(int n, char c)
 	long int	new_n;
 
 	new_n = n;
+	base = malloc(17);
+	if (!base)
+		return ;
 	if (c == 'X')
 		base = "0123456789ABCDEF";
 	else
@@ -29,8 +32,8 @@ void	ft_putnbr_base(int n, char c)
 	}
 	if (new_n >= 16)
 	{
-		ft_putnbr_base(new_n / 16);
-		ft_putnbr_base(new_n % 16);
+		ft_putnbr_base(new_n / 16, c);
+		ft_putnbr_base(new_n % 16, c);
 	}
 	if (new_n < 16)
 		ft_putchar(base[new_n]);
