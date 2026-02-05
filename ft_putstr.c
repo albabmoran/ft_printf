@@ -6,31 +6,30 @@
 /*   By: alba <alba@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 16:09:31 by albben-a          #+#    #+#             */
-/*   Updated: 2026/02/05 16:28:13 by alba             ###   ########.fr       */
+/*   Updated: 2026/02/05 20:50:36 by alba             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(char *s)
+int	ft_putstr(char *s, int countb)
 {
 	int	i;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-void	ft_putstr(char *s)
-{
-	int	len;
-
-	if (s)
+	if (!s)
 	{
-		len = ft_strlen(s);
-		write(1, s, len);
+		write(1, "(null)", 6);
+		countb += 6;
 	}
 	else
-		write(1, "(null)", 6);
+	{
+		i = 0;
+		while (s[i])
+		{
+			write(1, &s[i], 1);
+			i++;
+			countb++;
+		}
+	}
+	return (countb);
 }

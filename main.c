@@ -6,7 +6,7 @@
 /*   By: alba <alba@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 16:36:18 by albben-a          #+#    #+#             */
-/*   Updated: 2026/02/05 16:59:03 by alba             ###   ########.fr       */
+/*   Updated: 2026/02/05 23:12:13 by alba             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,9 @@ int	main(void)
 	ft_printf("ft_printf: %% %%%%%%% %%\n");
 	printf("printf: %% %%%%%%% %%\n");
 
+	ft_printf("X%%%%%%% Y\n");
+	printf("X%%%%%%% Y\n");
+
 	ft_printf("ft_printf: %x\n", 255);
 	printf("printf: %x\n", 255);
 
@@ -102,10 +105,19 @@ int	main(void)
 	ft_printf("ft_printf: %k\n");
 	printf("printf: %k\n");
 
-	//ft_printf("%");
-	//printf("%");
+	ft_printf("%%\n");
+	printf("%%\n");
 
-	//ft_printf(NULL);
+	ft_printf("%d %s %c %% %x\n", 1, "hi", 'A', 255);
+	printf("%d %s %c %% %x\n", 1, "hi", 'A', 255);
+
+	ft_printf("%s\n", NULL);
+	printf("%s\n", NULL);
+
+	ft_printf("%");
+	printf("%");
+
+	ft_printf(NULL);
 	printf(NULL);
 
 	return (0);

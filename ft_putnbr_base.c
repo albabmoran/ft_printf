@@ -6,13 +6,13 @@
 /*   By: alba <alba@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:42:17 by albben-a          #+#    #+#             */
-/*   Updated: 2026/02/05 14:20:44 by alba             ###   ########.fr       */
+/*   Updated: 2026/02/05 21:06:22 by alba             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_base(int n, char c)
+int	ft_putnbr_base(int n, char c, int countb)
 {
 	char		*base;
 	long int	new_n;
@@ -26,12 +26,14 @@ void	ft_putnbr_base(int n, char c)
 	{
 		new_n = -new_n;
 		write(1, "-", 1);
+		countb++;
 	}
 	if (new_n >= 16)
 	{
-		ft_putnbr_base(new_n / 16, c);
-		ft_putnbr_base(new_n % 16, c);
+		countb = ft_putnbr_base(new_n / 16, c, countb);
+		countb = ft_putnbr_base(new_n % 16, c, countb);
 	}
 	if (new_n < 16)
-		ft_putchar(base[new_n]);
+		countb = ft_putchar(base[new_n], countb);
+	return (countb);
 }

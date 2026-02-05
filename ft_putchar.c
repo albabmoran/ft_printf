@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albben-a <albben-a@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: alba <alba@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:31:22 by albben-a          #+#    #+#             */
-/*   Updated: 2026/02/04 16:17:20 by albben-a         ###   ########.fr       */
+/*   Updated: 2026/02/05 21:06:31 by alba             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c, int countb)
 {
 	write(1, &c, 1);
+	countb++;
+	return (countb);
 }
