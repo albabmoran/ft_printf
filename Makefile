@@ -6,7 +6,7 @@
 #    By: albben-a <albben-a@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/04 11:59:20 by albben-a          #+#    #+#              #
-#    Updated: 2026/02/04 13:30:10 by albben-a         ###   ########.fr        #
+#    Updated: 2026/02/07 17:21:42 by albben-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,13 @@ FLAGS = -Wall -Wextra -Werror
 
 AR = ar -rcs
 
-SRC = 
+SRC =	ft_printf.c \
+	ft_putchar.c \
+	ft_putstr.c \
+	ft_putnbr.c \
+	ft_putnbr_base.c \
+	ft_putunsigned.c \
+	ft_putptr.c \
 
 OBJ = $(SRC:.c=.o)
 

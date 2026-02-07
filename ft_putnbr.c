@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alba <alba@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: albben-a <albben-a@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:34:31 by albben-a          #+#    #+#             */
-/*   Updated: 2026/02/05 20:51:38 by alba             ###   ########.fr       */
+/*   Updated: 2026/02/07 19:23:51 by albben-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ int	ft_putnbr(int n, int countb)
 		if (n < 0)
 		{
 			n = -n;
-			write(1, "-", 1);
-			countb++;
+			countb = ft_putchar('-', countb);
 		}
 		if (n > 9)
 		{

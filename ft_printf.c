@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alba <alba@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: albben-a <albben-a@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 13:47:02 by albben-a          #+#    #+#             */
-/*   Updated: 2026/02/05 21:23:20 by alba             ###   ########.fr       */
+/*   Updated: 2026/02/07 19:27:03 by albben-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ static int	detect_format(char c, va_list *args, int countb)
 		countb = ft_putnbr_base(va_arg(*args, int), c, countb);
 	else if (c == '%')
 		countb = ft_putchar('%', countb);
+	else
+		countb = ft_putchar(c, countb);
 	return (countb);
 }
 
@@ -38,7 +40,6 @@ int	ft_printf(char const *formatstr, ...)
 	va_list	args;
 	int		i;
 	int		countb;
-	int		check;
 
 	va_start(args, formatstr);
 	i = 0;
@@ -49,10 +50,7 @@ int	ft_printf(char const *formatstr, ...)
 	{
 		if (formatstr[i] == '%' && formatstr[i + 1])
 		{
-			check = countb;
 			countb = detect_format(formatstr[i + 1], &args, countb);
-			if (check == countb)
-				countb = ft_putchar(formatstr[i + 1], countb);
 			i++;
 		}
 		else if (formatstr[i] != '%')
@@ -92,7 +90,7 @@ int main(void)
 {
     int ret_ft;
     int ret_real;
-    int x = 42;
+    //int x = 42;
 
     printf("=== TEST 1 ===\n");
     ret_ft = ft_printf("Hola %s %d %c %%\n", "mundo", 42, 'A');
@@ -110,13 +108,13 @@ int main(void)
     printf("ft: %d | real: %d\n\n", ret_ft, ret_real);
 
     printf("=== TEST 4 === (NULL y edge)\n");
-    ret_ft = ft_printf("NULL: %s | INT_MIN: %d\n", NULL, INT_MIN);
-    ret_real = printf("NULL: %s | INT_MIN: %d\n", NULL, INT_MIN);
+    ret_ft = ft_printf("NULL: %s | INT_MIN: %d\n", (char *)NULL, INT_MIN);
+    ret_real = printf("NULL: %s | INT_MIN: %d\n", (char *)NULL, INT_MIN);
     printf("ft: %d | real: %d\n\n", ret_ft, ret_real);
 
     printf("=== TEST 5 === (punteros y hex)\n");
-    ret_ft = ft_printf("%p %x %X\n", &x, 255, 255);
-    ret_real = printf("%p %x %X\n", &x, 255, 255);
+    ret_ft = ft_printf("%p %x %X\n", NULL, 255, 255);
+    ret_real = printf("%p %x %X\n", NULL, 255, 255);
     printf("ft: %d | real: %d\n\n", ret_ft, ret_real);
 
     printf("=== TEST 6 === (char nulo)\n");

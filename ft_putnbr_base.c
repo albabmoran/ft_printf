@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alba <alba@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: albben-a <albben-a@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:42:17 by albben-a          #+#    #+#             */
-/*   Updated: 2026/02/05 21:06:22 by alba             ###   ########.fr       */
+/*   Updated: 2026/02/07 19:59:33 by albben-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,21 @@
 
 int	ft_putnbr_base(int n, char c, int countb)
 {
-	char		*base;
-	long int	new_n;
+	char			*base;
+	unsigned int	new_n;
 
-	new_n = n;
+	new_n = (unsigned int)n;
 	if (c == 'X')
 		base = "0123456789ABCDEF";
-	else
+	else if (c == 'x')
 		base = "0123456789abcdef";
 	if (new_n < 0)
 	{
 		new_n = -new_n;
-		write(1, "-", 1);
-		countb++;
+		countb = ft_putchar('-', countb);
 	}
 	if (new_n >= 16)
-	{
 		countb = ft_putnbr_base(new_n / 16, c, countb);
-		countb = ft_putnbr_base(new_n % 16, c, countb);
-	}
-	if (new_n < 16)
-		countb = ft_putchar(base[new_n], countb);
+	countb = ft_putchar(base[new_n % 16], countb);
 	return (countb);
 }

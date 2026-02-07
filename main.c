@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alba <alba@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: albben-a <albben-a@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 16:36:18 by albben-a          #+#    #+#             */
-/*   Updated: 2026/02/05 23:12:13 by alba             ###   ########.fr       */
+/*   Updated: 2026/02/07 19:03:13 by albben-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ int	main(void)
 	ft_printf("ft_printf: %c", 'a');
 	printf("\nprintf: %c\n", 'a');
 
+	printf(" %p %p ", (void *)0, (void *)0);
+	ft_printf(" %p %p ", 0, 0);
+	
+	printf(" %x ", -1);
+	ft_printf(" %x ", -1);
+
 	ft_printf("ft_printf: %c%%", 'a');
 	printf("\nprintf: %c%%\n", 'a');
 
@@ -29,11 +35,17 @@ int	main(void)
 	ft_printf("ft_printf: %s", "hello");
 	printf("\nprintf: %s\n", "hello");
 
-	ft_printf("ft_printf: %s", NULL);
-	printf("\nprintf: %s\n", NULL);
+	ft_printf("ft_printf: %s", (char *)NULL);
+	printf("\nprintf: %s\n", (char *)NULL);
 
 	ft_printf("ft_printf: %p", (void *)"hola");
 	printf("\nprintf: %p\n", (void *)"hola");
+
+	int y;
+	y = ft_printf("%p", NULL);
+	ft_printf("\n%d", y);
+	y = printf("%p", NULL);
+	printf("%d\n", y);
 
 	ft_printf("ft_printf: %p", "hello");
 	printf("\nprintf: %p\n", "hello");
@@ -81,10 +93,10 @@ int	main(void)
 	printf("printf: %s %d %c %u %%\n", "Edad:", 20, 'A', 42);
 
 	ft_printf("ft_printf: %% %%%%%%% %%\n");
-	printf("printf: %% %%%%%%% %%\n");
+	//printf("printf: %% %%%%%%% %%\n");
 
 	ft_printf("X%%%%%%% Y\n");
-	printf("X%%%%%%% Y\n");
+	//printf("X%%%%%%% Y\n");
 
 	ft_printf("ft_printf: %x\n", 255);
 	printf("printf: %x\n", 255);
@@ -100,10 +112,10 @@ int	main(void)
 	printf("printf: %p\n", &x);
 
 	ft_printf("ft_printf: %");
-	printf("printf: %");
+	//printf("printf: %");
 
 	ft_printf("ft_printf: %k\n");
-	printf("printf: %k\n");
+	//printf("printf: %k\n");
 
 	ft_printf("%%\n");
 	printf("%%\n");
@@ -111,11 +123,11 @@ int	main(void)
 	ft_printf("%d %s %c %% %x\n", 1, "hi", 'A', 255);
 	printf("%d %s %c %% %x\n", 1, "hi", 'A', 255);
 
-	ft_printf("%s\n", NULL);
-	printf("%s\n", NULL);
+	ft_printf("%s\n", (char *)NULL);
+	printf("%s\n", (char *)NULL);
 
 	ft_printf("%");
-	printf("%");
+	//printf("%");
 
 	ft_printf(NULL);
 	printf(NULL);
